@@ -6,22 +6,37 @@ package com.example.task03;
 public class TimeUnitUtils {
 
     /**
-     * Конвертирует интервал в секундах в интервал в миллисекундах
+     * Конвертирует интервал в миллисекунды
      *
-     * @param seconds интервал в секундах
      * @return интервал в миллисекундах
      */
     public static Milliseconds toMillis(Seconds seconds) {
         return new Milliseconds(seconds.toMillis());
     }
-
+    public static Milliseconds toMillis(Minutes minutes) { return new Milliseconds(minutes.toMillis()); }
+    public static Milliseconds toMillis(Hours hours) { return new Milliseconds(hours.toMillis()); }
     /**
-     * Конвертирует интервал в миллисекундах в интервал в секундах
+     * Конвертирует интервал в секунды
      *
-     * @param millis интервал в миллисекундах
      * @return интервал в секундах
      */
     public static Seconds toSeconds(Milliseconds millis) {
         return new Seconds(millis.toSeconds());
     }
+    public static Seconds toSeconds(Minutes minutes) {
+        return new Seconds(minutes.toSeconds());
+    }
+    public static Seconds toSeconds(Hours hours) {
+        return new Seconds(hours.toSeconds());
+    }
+
+    // Конвертирует интервал в минуты
+    public static Minutes toMinutes(Milliseconds millis) { return new Minutes(millis.toMinutes()); }
+    public static Minutes toMinutes(Seconds seconds) { return new Minutes(seconds.toMinutes()); }
+    public static Minutes toMinutes(Hours hours) { return new Minutes(hours.toMinutes()); }
+
+    // Конвертирует интервал в часы
+    public  static Hours toHours(Milliseconds millis) { return new Hours(millis.toHours()); }
+    public  static Hours toHours(Seconds seconds) { return new Hours(seconds.toHours()); }
+    public  static Hours toHours(Minutes minutes) { return new Hours(minutes.toHours()); }
 }

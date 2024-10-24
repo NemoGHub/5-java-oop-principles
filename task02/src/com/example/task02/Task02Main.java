@@ -11,11 +11,26 @@ public class Task02Main {
 
     public static void main(String[] args) {
         Bill bill = new Bill();
+
         bill.add(ITEM1, 10);
         bill.add(ITEM3, 3);
         bill.add(ITEM6, 1);
         System.out.println(bill);
         bill.add(ITEM3, 3);
         System.out.println(bill);
+
+        DiscountBill discountBill = new DiscountBill(50);
+
+        discountBill.add(ITEM1, 10);
+        discountBill.add(ITEM3, 3);
+        discountBill.add(ITEM6, 1);
+        System.out.println(discountBill);
+        discountBill.add(ITEM3, 3);
+
+        System.out.println("getDiscount() = " + discountBill.getDiscount());
+        System.out.println("%%%%%%%%%%%% = " + discountBill.getPercentDiscount() + "%");
+        System.out.println("getAbsDiscount() = " + discountBill.getAbsoluteDiscount());
+
+        System.out.println(discountBill);
     }
 }
